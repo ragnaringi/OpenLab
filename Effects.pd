@@ -1,0 +1,26 @@
+#N canvas 542 144 803 326 10;
+#X obj 406 76 inlet~ left;
+#X obj 596 76 inlet~ right;
+#X obj 446 160 *~;
+#X obj 636 160 *~;
+#X obj 406 245 outlet~ left;
+#X obj 596 245 outlet~ left;
+#X obj 162 138 hsl 128 15 0 1 0 0 \$0-reverb empty REVERB -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 461 115 r \$0-reverb;
+#X obj 651 115 r \$0-reverb;
+#X obj 651 137 lop~ 2;
+#X obj 461 137 lop~ 2;
+#X obj 446 182 throw~ \$1-REVERB-LEFT;
+#X obj 636 182 throw~ \$1-REVERB-RIGHT;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 11 0;
+#X connect 3 0 12 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 1;
+#X connect 10 0 2 1;
+#X coords 0 -1 1 1 200 60 1 100 100;
